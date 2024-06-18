@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git branch: 'developer', url: 'https://github.com/dabugie/hello-world-vitejs.git'
+                git branch: 'main', url: 'https://github.com/dabugie/hello-world-vitejs.git'
             }
         }
         
