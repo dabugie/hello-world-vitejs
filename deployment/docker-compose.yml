@@ -3,8 +3,8 @@ services:
   nginx-react:
     container_name: nginx-react
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: deployment/Dockerfile
     ports:
       - "3000:80"
     environment:
