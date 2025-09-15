@@ -1,30 +1,80 @@
-# React + TypeScript + Vite
+# Hello World - React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A quick containerized React application for testing port integration in servers. Built with TypeScript and Vite, featuring Docker deployment with Nginx.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ **Vite** - Fast build tool with HMR (Hot Module Replacement)
+- ⚛️ **React 18.3.1** - Latest React with concurrent features
+- 🔷 **TypeScript** - Type-safe development
+- 🎨 **SWC** - Super-fast TypeScript/JavaScript compiler
+- 📦 **Docker** - Containerized deployment with Nginx
+- 🔧 **ESLint** - Code linting and formatting
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (v20 or higher)
+- npm or yarn
+- Docker (for containerized deployment)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Development
+
+1. Install dependencies:
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Start development server:
+```bash
+npm run dev
+```
+
+3. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+### Production Build
+
+```bash
+npm run build
+```
+
+### Docker Deployment
+
+Build and run the application in a Docker container:
+
+```bash
+npm run docker:up
+```
+
+This will build the Docker image and run the container on [http://localhost:3000](http://localhost:3000)
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+- `npm run docker:up` - Build and run Docker container
+
+## Project Structure
+
+```
+├── src/                 # Source code
+├── deployment/          # Docker configuration
+│   ├── Dockerfile       # Multi-stage Docker build
+│   ├── docker-compose.yml
+│   └── nginx/
+│       └── nginx.conf   # Nginx configuration
+├── public/              # Static assets
+└── dist/                # Production build output
+```
+
+## Technologies Used
+
+- **React**: Frontend library
+- **TypeScript**: Type-safe JavaScript
+- **Vite**: Build tool and dev server
+- **SWC**: Fast TypeScript/JavaScript compiler
+- **Docker**: Containerization
+- **Nginx**: Web server for production
